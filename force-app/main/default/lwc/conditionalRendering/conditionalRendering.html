@@ -1,0 +1,34 @@
+<template>
+    <lightning-input type="checkbox" label="Display Div" onchange={showDivHandler}></lightning-input>
+
+    <template if:true={displayDiv}>
+    <div>I am here</div>
+    </template> 
+
+
+    <template if:false={displayDiv}>
+        <div>I am False</div>
+        </template> 
+
+    <!-- Asay ham condition laga sakty hain lwc may js may var ko false kar dia yaha bola if true to div dikho aur false pay kuch aur kar lana -->
+
+    <!-- abhi push kia to nazar nahi ay ga to ap ko 1st meta file may exposed true karna ho ga aur sath may hi components ko access karna hay to targets dany hon gay kay kaha kaha component nazar ay  -->
+
+
+    <!-- Looping  -->
+
+    <template for:each={cityList} for:item="city">
+        <div key={city}>{city}</div>
+    </template>
+
+    <h1>Below is an example of iterator directive</h1>
+
+    <!-- 2nd way of looping -->
+
+    <!-- ais may ham iterator directive ka use karty hain aur it.value ka hi use karna hota hay NOTE: ais may ham 1st and last element bhi check kar sakty hain by it.first & it.last -->
+    <template iterator:it={cityList}>
+        {it.last} 
+        <!-- it gives true or false -->
+        <p key={it.value}>{it.value}</p>
+    </template>
+</template>

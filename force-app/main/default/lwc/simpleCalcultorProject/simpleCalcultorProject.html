@@ -1,0 +1,97 @@
+<template>
+    <!-- 1st make component 
+     2nd change its meta file to true, targets , target, app_page + home_page + record page -->
+
+
+     <!-- 
+     NOTE: ham html ki divs aur use kar sakty hain lakin lightning items use karna zada acha hay
+
+     Components library has over 70+ base components
+      https://developer.salesforce.com/docs/component-library/overview/components
+       -->
+
+       <!-- 
+       Note: icons ko use karny kay liay icon-name="" use karo phir slds icon ki file may jao aur 1st category name do then icon ka name eg "standard formula"
+       -->
+
+    <lightning-card title="Simple Calculator" icon-name="standard:formula">
+        <!-- asay icon add ho ga 1st category name then icon name -->
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="12" padding="around-medium">
+                <!-- ya size property complete horizontal space lay ga to saray next row may ain gay -->
+                <lightning-input type="number" name="firstNumber" onchange={numberChangeHandler}>
+                    <!-- onchange use hota hay inputs kay liay client event kay liay onClick jo ham buttons may lagin gay -->
+
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" name="secondNumber" onchange={numberChangeHandler}>
+
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+
+                <lightning-button-group>
+                    <lightning-button label="Add" icon-name="utility:add" icon-position="right" onclick={addHandler}>
+                        <!-- ya icon ki position set karta hay to right ki hay abhi -->
+                    </lightning-button>
+
+                    <lightning-button label="Subtract" icon-name="utility:dash" icon-position="right" onclick={subHandler}></lightning-button>
+
+                    <lightning-button label="Multiplay" icon-name="utility:close" icon-position="right" onclick={multiplayHandler}></lightning-button>
+
+                    <lightning-button label="Divide" icon-name="utility:magicwand" icon-position="right" onclick={dividsionHandler}></lightning-button>
+                </lightning-button-group>
+
+            </lightning-layout-item>
+
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={currentResult}></lightning-formatted-text>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                
+                <lightning-input label="show previous result" type="checkbox" onchange={showPerviousResultToggle}></lightning-input>
+
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-medium">
+                <template if:true={showPerResult}>
+
+                    <ul>
+                        <template iterator:result={previousResult}>
+                            <!-- li may key di phir ak div bani ager true hay to first element hay to border top ay varna ager last element hay to border bottom ay -->
+                            <li key={result.value}>
+                                <div if:true={result.first} class="slds-border_top"></div>
+
+                                <lightning-formatted-text value={result.value}>
+    
+                                </lightning-formatted-text>
+                                
+                                <div if:true={result.last} class="slds-border_bottom"></div>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
+
+
+<!-- Create new App 
+After push changes then >Search App Mananger > click new Lightning App > Give name > Select standard navigation > Select utility items (if want) > give access to all profile (if want) > or Select (some which want)
+
+            Save
+
+********** Now create a New Lightning App Builder
+
+Search App builder > New > Select App page > give name > Select App page (for project i select one region)
+
+Now Select your SimpleCalculator and drop it your empty builder Save > Activate > Assign lightning Experience > Lwc_Session > Add > Save
+
+Go back > open lwc_Session app from home setup > select Lwc_Session
+
+-->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <!-- true: When it true means it can be access from all in the orgs 
+    when false it can only be access from the component that is using it -->
+    <targets>
+    <target>lightning__RecordPage</target>
+    <target>lightning__AppPage</target>
+    <target>lightning__HomePage</target>
+    <!-- ya vo hay kay kin kin pages pay hamara component show ho ga  -->
+    </targets>
+</LightningComponentBundle>
