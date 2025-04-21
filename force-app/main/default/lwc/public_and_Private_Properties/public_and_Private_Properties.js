@@ -54,5 +54,13 @@ export default class Public_and_Private_Properties extends LightningElement {
         }
     }
 
+    // This is called getter that uses for insert BL (business logic) it can simple and to be complex you want to complex
+    get bmiValue(){
+        if(this.bmiData.result == undefined){
+            return "";
+        }
+        return `Your bmi is: ${this.bmiData.result}`
+    }
+
  
 }
