@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class Public_and_Private_Properties extends LightningElement {
     cardTitle = 'BMI calculator';
@@ -26,8 +26,13 @@ export default class Public_and_Private_Properties extends LightningElement {
     //     this.bmi = this.weight / (this.height * this.height);
     // }
 
-    bmiData = {
-        weight: 0,
+
+    // NOTE: ham nay ya banai auper @track ki need nahi thi Q kay vo variables thay but ais may need ho gi Q kay arrays, object, DML, DDL may @track use ho ga (console may to changes hon gi lakin ui pay nazar nahi ay ga)
+
+    // So ham @track use karin gay jo premitive datatypes nahi hay aun pay use ho ga
+
+    @ track bmiData = {
+         weight: 0,
         height: 0,
         result: 0
     }
