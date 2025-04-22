@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
+            <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Capacity: {meetingRoomInfo.roomCapacity}</p>
+        </lightning-tile>
+    </div>
+</template>
+
+<!-- This is our child component where we make @api in js So values come for this component that we made parent for it 
+the parent has its file name in cabab case (meeting-room-info )
+-->

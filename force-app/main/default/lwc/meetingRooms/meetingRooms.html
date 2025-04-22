@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Meeting Rooms">
+        <ul>
+            <template for:each={meetingRoomsInfo} for:item="room">
+                <li key={room.roomName} style="padding: 10px">
+                    <c-meeting-room meeting-room-info={room}></c-meeting-room>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
+
+
+<!-- ya ham nay meetingRooms kay name say ak file banai hay jo kay use kar rahi hay meeting-room-info ko as child component to ais kay js may ham nay values pass ki array of object may jo kay use ho rahi hain meetingRoom file may aur iterate ki hain ais file may, iteration jo hay vo parent may ho gi aur chaild may card bany ga aur values jaha use karni hain vo lagin gi yaha pay assign ho ga values -->
