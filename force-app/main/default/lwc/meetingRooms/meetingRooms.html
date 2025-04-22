@@ -3,7 +3,8 @@
         <ul>
             <template for:each={meetingRoomsInfo} for:item="room">
                 <li key={room.roomName} style="padding: 10px">
-                    <c-meeting-room meeting-room-info={room}></c-meeting-room>
+                    <c-meeting-room meeting-room-info={room} show-room-info></c-meeting-room>
+                    <!-- ham nay show-room-info (ko koi value nahi di Q kay default ya true hoti hay but ager false karna hay to false day do value) abhi push karo cards nazar ain gay lakin phir hata kay dakhna nahi ain gay cards -->
                 </li>
             </template>
         </ul>
