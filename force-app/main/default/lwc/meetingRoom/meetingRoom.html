@@ -1,10 +1,24 @@
 <template>
-    <template if:true={showRoomsInfo}>
+    <!-- <template if:true={showRoomsInfo}>
 
         <div class="slds-p-around_medium lgc-bg">
             <lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
                 <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Capacity: {meetingRoomInfo.roomCapacity}</p>
             </lightning-tile>
+        </div>
+    </template> -->
+
+
+    <!-- ya ham *********** slots ******************* use kar rahy hain parent say child may value lany kay liay -->
+
+
+    <!-- Ais may ham public api use nahi karin gay jo tiles ya div use karni hain vo parent may jay ga jaha iterations ho gi aus may phir Slots ham child may use karin gay named aur unnamed slots (slots aur kuch nahi hay ak thara ka markup or intidator hay kay yaha jo slot ko name dia vo use ho ga parent may jis div may ya name ho ga vo div aus ki jaga a jay ga chlid may slot pay jaha name nahi ho ga slot may vo unnamed slot hota hay aus ki jaga vo div ay ga jis div may ham nay koi bhi name nahi dia ho ga lakin ham only 1 or 0 unnamed slot use krin gay ak component may named use kar sakty hain. ) CONCLUSION: child my slots bano jin ko names do aur parent may div may class kay jasay slot ka name do eg slot="slotInfo" asay name do phir vo yaha a jay ga child may -->
+     <template if:true={showRoomsInfo}>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <slot name="roomInfo"></slot>
+            <slot></slot>  <!-- this is nunamed slot -->
+            <!-- slots jab use karin gay to phalay child may slots use karin gay phir aus kay bad meetingRoom may @api khatam kar dain gay aur lightning tile ko parent may likhin gay -->
         </div>
     </template>
 </template>

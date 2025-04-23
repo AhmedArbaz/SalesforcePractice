@@ -1,7 +1,8 @@
 import { LightningElement, api } from 'lwc';
 
 export default class MeetingRoom extends LightningElement {
-    @api meetingRoomInfo = {roomName:'A-01', roomCapacity:'12'}
+    // @api meetingRoomInfo = {roomName:'A-01', roomCapacity:'12'}
+    // now ais ki need nahi hay Q kay ham slots use karin gay 
     
     // This is our child component where we make @api in js So values come for this component that we made parent for it 
     // the parent has its file name in cabab case (meeting-room-info)

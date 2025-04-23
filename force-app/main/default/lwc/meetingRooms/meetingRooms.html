@@ -3,7 +3,20 @@
         <ul>
             <template for:each={meetingRoomsInfo} for:item="room">
                 <li key={room.roomName} style="padding: 10px">
-                    <c-meeting-room meeting-room-info={room} show-room-info></c-meeting-room>
+                    <c-meeting-room show-room-info>
+
+                        <lightning-tile label={room.roomName} href="/path/to/somewhere" slot="roomInfo">
+                            <!-- ya named slot ki jaga jay ga lightning tile  -->
+                            <!-- slot ham nay child may dia jis name say dia vo yaha a gaya 
+                             NOTE: jaha tag ki thara slot ko use karin gay to ya value select karay ga aur parent may asi thara likhny say value jo hay yah provide karin gay-->
+
+                             <!-- ak ham nay child may unnamed slot likhin hay aus ko use karny ka tarika ya hay kay ham without any name diay jasay auper dia hay slot="roomInfo"  -->
+                            <p class="slds-truncate" title={room.roomCapacity}>Capacity: {meetingRoomInfo.roomCapacity}</p>
+                        </lightning-tile>
+                        <div>Additional markup will go in unnamed slot</div> 
+                        <!-- ya unnamed slot may jay ga child may  -->
+                        <!-- variable same ho ga jab ham copy kar lay lain gay meetingRoom say -->
+                    </c-meeting-room>
                     <!-- ham nay show-room-info (ko koi value nahi di Q kay default ya true hoti hay but ager false karna hay to false day do value) abhi push karo cards nazar ain gay lakin phir hata kay dakhna nahi ain gay cards -->
                 </li>
             </template>
