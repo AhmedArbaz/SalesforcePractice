@@ -21,7 +21,7 @@ export default class PublicMethodChild extends LightningElement {
     //     ];
     // }
 
-@api
+    @api
     selectCheckBox(checkboxValue){
         const selectedCheckBox = this.options.find(checkbox =>{
             return checkboxValue === checkbox.value;
