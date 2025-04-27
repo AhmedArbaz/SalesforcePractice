@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Call Method on a child component">
+
+        <lightning-input value={value} label="Enter value"></lightning-input>
+        <lightning-button label="Select Checkbox" onclick={checkBoxSelectHandler}></lightning-button>
+    </lightning-card>
+
+    <c-public-method-child></c-public-method-child>
+    <!-- ya ham nay apny parent component may child ko call kar lia -->
+</template>
+
+<!-- ya sab karny kay bad parent file ki meta file ko update karna hota hay  -->
