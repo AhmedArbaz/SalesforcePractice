@@ -5,6 +5,8 @@ export default class PublicMethodParent extends LightningElement {
 
     checkBoxSelectHandler(){
         const childComponent = this.template.querySelector('c-public-method-child')
-        childComponent.selectCheckBox(this.value);
+
+        const returnedMessage = childComponent.selectCheckBox(this.value);
+        console.log('Returned Value: ',returnedMessage);
     } 
 }
