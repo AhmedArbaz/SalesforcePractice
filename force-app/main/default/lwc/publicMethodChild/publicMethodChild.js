@@ -28,7 +28,7 @@ export default class PublicMethodChild extends LightningElement {
         })
         // The find method returns the first element in which the provided function returns true.
         if(selectedCheckBox){
-            this.value = selectedCheckBox;
+            this.value = selectedCheckBox.value;
             return "susscessfully checked"
         }
             return "No checkbox found"
