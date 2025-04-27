@@ -9,4 +9,10 @@ export default class PublicMethodParent extends LightningElement {
         const returnedMessage = childComponent.selectCheckBox(this.value);
         console.log('Returned Value: ',returnedMessage);
     } 
+
+    // ya ham nay input ko bhi track kar lia hay html to js
+
+    oninputChangeHandler(event){
+        this.value = event.target.value;
+    }
 }
