@@ -1,0 +1,11 @@
+<template>
+    <template if:true={showRoomInfo}>
+        <div class="slds-p-around_medium lgc-bg" onclick={tileClickHandler}>
+            <!-- koi bhi auper valy div pay click kary to kia ho to onlclick lagaya phir ais kay handler ko banaya js may hi -->
+            <lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
+                <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Room Capacity:
+                    {meetingRoomInfo.roomCapacity}</p>
+            </lightning-tile>
+        </div>
+    </template>
+</template>

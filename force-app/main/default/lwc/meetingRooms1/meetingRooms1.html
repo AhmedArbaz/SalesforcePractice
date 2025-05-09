@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Meeting Rooms">
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-small">
+                <!-- list ko ais layout may dal dia -->
+                <ul>
+                    <template for:each={meetingRoomsInfo} for:item="room">
+                        <li key={room.roomName} style="padding: 10px">
+
+                            <c-meeting-room meeting-room-info={room} show-room-info></c-meeting-room>
+                            <!-- ya 2nd way hay jo programatically chaly ga -->
+
+                            <!-- <c-meeting-room meeting-room-info={room} show-room-info ontileclick={onTileSelectHandler}></c-meeting-room> -->
+                            <!-- 1st way by tag to yaha same name liko jo ham nay dia tha child ki js may bas start may on lagay ga aur yaha ak property define karo jo kay parent kay js may use ho gi -->
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+            <lightning-layout-item size="8" padding="around-small">
+                You have selected : {selectedMeetingRoom}
+                <!-- ya ham nay apni property define ki jo kay parent kay js may use ho gi -->
+                 <!-- event ko chaild say yaha dikhny kay 2 ways hain ak declearative and 2nd progamitically -->
+            </lightning-layout-item>
+        </lightning-layout>
+        
+    </lightning-card>
+</template>
